@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Proy App Destinos</string>
+    <string name="label_listar_musicas" />
+    <string name="label_listar_desfiles" />
+    <string name="labelBuscar" />
+    <string name="label_listar_otros" />
+    <string name="title_activity_main2">MainActivity2</string>
+</resources>
