@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+
+import com.example.dexter.proyappdestinos.ListaItems.*;
+
 /**
  * Created by ADV_USER1 on 24/06/2017.
  */
@@ -20,30 +23,30 @@ public class ListaAdapter extends BaseAdapter implements Filterable {
 
     // Declare Variables
     Context context;
-    ArrayList<Datos> Datos;
+    ArrayList<ListaItems.DatosItem> mDatos;
     LayoutInflater inflater;
     CustomFilter filtro;
-    ArrayList<Datos> filtroList;
+    ArrayList<ListaItems.DatosItem> filtroList;
 
-    public ListaAdapter(Context context, ArrayList<Datos> Datos) {
+    public ListaAdapter(Context context, ArrayList<ListaItems.DatosItem> Datos) {
         this.context = context;
-        this.Datos = Datos;
+        this.mDatos = Datos;
         this.filtroList = Datos;
     }
 
     @Override
     public int getCount() {
-        return Datos.size();
+        return mDatos.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return Datos.get(position);
+        return mDatos.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return Datos.indexOf(getItem(position));
+        return mDatos.indexOf(getItem(position));
     }
 
     @Override
@@ -61,12 +64,12 @@ public class ListaAdapter extends BaseAdapter implements Filterable {
 
 
         // Locate the TextViews in listview_item.xml
-        txtTitle = (TextView) view.findViewById(R.id.titulo);
-        imgImg = (ImageView) view.findViewById(R.id.image);
+        txtTitle = (TextView) view.findViewById(R.id.tituloLista);
+        imgImg = (ImageView) view.findViewById(R.id.iconLista);
 
         // Capture position and set to the TextViews
-        txtTitle.setText(Datos.get(position).getTitulo());
-        imgImg.setImageResource(Datos.get(position).getImg());
+        txtTitle.setText(mDatos.get(position).getTitulo());
+        imgImg.setImageResource(mDatos.get(position).getImg());
 
         return view;
     }
@@ -91,11 +94,11 @@ public class ListaAdapter extends BaseAdapter implements Filterable {
                 //pasamos a mayusculas
                 constraint = constraint.toString().toUpperCase();
 
-                ArrayList<Datos> filtro = new ArrayList<Datos>();
+                ArrayList<ListaItems.DatosItem> filtro = new ArrayList<ListaItems.DatosItem>();
 
                 for(Integer i=0;i<filtroList.size();i++){
                     if(filtroList.get(i).getTitulo().toUpperCase().contains(constraint)){
-                        Datos d= new Datos(filtroList.get(i).getTitulo(),filtroList.get(i).getImg());
+                        ListaItems.DatosItem d= new ListaItems.DatosItem(filtroList.get(i).getId(),filtroList.get(i).getTitulo(),filtroList.get(i).getImg());
 
                         filtro.add(d);
                     }
@@ -112,7 +115,7 @@ public class ListaAdapter extends BaseAdapter implements Filterable {
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            Datos = (ArrayList<Datos>) results.values;
+            mDatos = (ArrayList<ListaItems.DatosItem>) results.values;
             notifyDataSetChanged();
 
         }

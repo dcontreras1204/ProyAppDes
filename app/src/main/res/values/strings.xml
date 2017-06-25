@@ -6,4 +6,5 @@
     <string name="label_listar_otros" />
     <string name="title_activity_main2">MainActivity2</string>
     <string name="action_settings" />
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

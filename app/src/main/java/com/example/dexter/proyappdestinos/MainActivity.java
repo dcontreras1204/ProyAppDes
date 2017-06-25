@@ -1,67 +1,41 @@
 package com.example.dexter.proyappdestinos;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
+
 public class MainActivity extends AppCompatActivity {
 
     ListaAdapter adapter;
 
-    String[] titulo = new String[]{
-            "Home",
-            "Fotos",
-            "Contacto",
-    };
-
-    int[] imagenes = {
-            R.drawable.home,
-            R.drawable.fotos,
-            R.drawable.contacto
-    };
-
-    SearchView buscador;
     ListView lista;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        setContentView( R.layout.activity_main);
-
-        lista = (ListView) findViewById(R.id.item_list);
-
-
+        lista = (ListView) findViewById(R.id.ContentListview);
 
         adapter = new ListaAdapter(this, getDatos());
         lista.setAdapter(adapter);
 
-        buscador.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String query) {
-                adapter.getFilter().filter(query);
-                return false;
-            }
-        });
 
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -81,20 +55,35 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private ArrayList<Datos> getDatos(){
-        ArrayList<Datos> Datos = new ArrayList<Datos>();
-        Datos d;
+    private ArrayList<ListaItems.DatosItem> getDatos() {
 
-        for(Integer i=0;i<titulo.length;i++){
-            d = new Datos(titulo[i], imagenes[i]);
-            Datos.add(d);
-
-        }
-        return Datos;
+        return ListaItems.ArregloLista();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        MenuItem item = menu.findItem(R.id.menuSearch);
+        SearchView searchView = (SearchView)item.getActionView();
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+
+                return false;
+            }
+        });
+
+
+        return super.onCreateOptionsMenu(menu);
+    }
 }
-
 
 
