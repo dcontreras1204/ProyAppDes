@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Proy App Destinos</string>
+    <string name="app_name">App Destinos</string>
     <string name="label_listar_musicas" />
     <string name="label_listar_desfiles" />
     <string name="labelBuscar" />
