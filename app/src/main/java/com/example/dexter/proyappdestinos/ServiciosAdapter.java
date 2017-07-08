@@ -12,35 +12,39 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Created by DEXTER ELECTRONICS on 5/07/2017.
+ */
 
-public class ListaAdapter extends BaseAdapter implements Filterable {
+public class ServiciosAdapter extends BaseAdapter implements Filterable {
 
     // Declare Variables
     Context context;
-    ArrayList<listaItems.DatosItem> mDatos;
+    ArrayList<ServiciosItems.DatosServiciosItem> mDatosServicios;
     LayoutInflater inflater;
-    CustomFilter filtro;
-    ArrayList<listaItems.DatosItem> filtroList;
+    CustomFilter filtroServicios;
+    ArrayList<ServiciosItems.DatosServiciosItem> filtroList;
 
-    public ListaAdapter(Context context, ArrayList<listaItems.DatosItem> Datos) {
+    public ServiciosAdapter (Context context, ArrayList<ServiciosItems.DatosServiciosItem> DatosServicios) {
         this.context = context;
-        this.mDatos = Datos;
-        this.filtroList = Datos;
-    }
+        this.mDatosServicios = DatosServicios;
+        this.filtroList = DatosServicios;
 
+
+    }
     @Override
     public int getCount() {
-        return mDatos.size();
+        return mDatosServicios.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mDatos.get(position);
+        return mDatosServicios.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return mDatos.indexOf(getItem(position));
+        return mDatosServicios.indexOf(getItem(position));
     }
 
     @Override
@@ -53,17 +57,15 @@ public class ListaAdapter extends BaseAdapter implements Filterable {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if(view == null){
-            view = inflater.inflate(R.layout.item_list_content, parent, false);
+            view = inflater.inflate(R.layout.item_list_content_servicios, parent, false);
 
         }
-
-        // Locate the TextViews in listview_item.xml
-        txtTitle = (TextView) view.findViewById(R.id.tituloLista);
-        imgImg = (ImageView) view.findViewById(R.id.iconLista);
+        txtTitle = (TextView) view.findViewById(R.id.TituloServicios);
+        imgImg = (ImageView) view.findViewById(R.id.ImgServicios);
 
         // Capture position and set to the TextViews
-        txtTitle.setText(mDatos.get(position).getTitulo());
-        imgImg.setImageResource(mDatos.get(position).getImg());
+        txtTitle.setText(mDatosServicios.get(position).getTitulo());
+        imgImg.setImageResource(mDatosServicios.get(position).getImg());
 
         return view;
     }
@@ -71,11 +73,11 @@ public class ListaAdapter extends BaseAdapter implements Filterable {
 
     @Override
     public Filter getFilter() {
-        if(filtro == null){
-            filtro = new CustomFilter();
+        if(filtroServicios == null){
+            filtroServicios = new CustomFilter();
         }
 
-        return filtro;
+        return filtroServicios;
     }
 
     class CustomFilter extends Filter{
@@ -88,17 +90,17 @@ public class ListaAdapter extends BaseAdapter implements Filterable {
                 //pasamos a mayusculas
                 constraint = constraint.toString().toUpperCase();
 
-                ArrayList<listaItems.DatosItem> filtro = new ArrayList<listaItems.DatosItem>();
+                ArrayList<ServiciosItems.DatosServiciosItem> filtroServicios = new ArrayList<ServiciosItems.DatosServiciosItem>();
 
                 for(Integer i=0;i<filtroList.size();i++){
                     if(filtroList.get(i).getTitulo().toUpperCase().contains(constraint)){
-                        listaItems.DatosItem d= new listaItems.DatosItem(filtroList.get(i).getId(),filtroList.get(i).getTitulo(),filtroList.get(i).getImg(),filtroList.get(i).getTipoturis());
+                        ServiciosItems.DatosServiciosItem s= new ServiciosItems.DatosServiciosItem(filtroList.get(i).getId(),filtroList.get(i).getTitulo(),filtroList.get(i).getImg(),filtroList.get(i).getTipoServicio());
 
-                        filtro.add(d);
+                        filtroServicios.add(s);
                     }
                 }
-                resulst.count= filtro.size();
-                resulst.values = filtro;
+                resulst.count= filtroServicios.size();
+                resulst.values = filtroServicios;
             }else{
                 resulst.count= filtroList.size();
                 resulst.values = filtroList;
@@ -109,9 +111,11 @@ public class ListaAdapter extends BaseAdapter implements Filterable {
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            mDatos = (ArrayList<listaItems.DatosItem>) results.values;
+            mDatosServicios = (ArrayList<ServiciosItems.DatosServiciosItem>) results.values;
             notifyDataSetChanged();
 
         }
     }
 }
+
+

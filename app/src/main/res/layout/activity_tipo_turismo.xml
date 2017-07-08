@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dexter.proyappdestinos.tipoTurismoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/turis1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorItem">
+
+                <ImageView
+                    android:id="@+id/iconLista1"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tipotursi1" />
+
+                <TextView
+                    android:id="@+id/tituloLista1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="TURISMO 1"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    android:layout_below="@+id/textView123"
+                    android:layout_alignStart="@+id/btTurismo1"
+                    android:layout_marginStart="49dp" />
+
+                <Button
+                    android:id="@+id/btTurismo1"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_blue_dark"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:drawableRight="@android:drawable/ic_menu_info_details"
+                    android:text="MAS INFO"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textColorLink="@android:color/white"
+                    android:textSize="12sp"
+                    android:layout_alignBottom="@+id/iconLista1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tituloLista"
+                    android:layout_toEndOf="@+id/iconLista"
+                    android:layout_toRightOf="@+id/iconLista"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textView123"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iconLista"
+                    android:layout_marginBottom="11dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginRight="26dp"
+                    android:layout_toLeftOf="@+id/tituloLista"
+                    android:layout_toStartOf="@+id/tituloLista"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/turis2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorItem1">
+
+                <ImageView
+                    android:id="@+id/iconLista2"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tipoturis2" />
+
+                <TextView
+                    android:id="@+id/tituloLista2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="TURISMO 2"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    android:layout_below="@+id/textView234"
+                    android:layout_alignStart="@+id/btTurismo2"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="12dp" />
+
+                <Button
+                    android:id="@+id/btTurismo2"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_blue_dark"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:drawableRight="@android:drawable/ic_menu_info_details"
+                    android:text="MAS INFO"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textColorLink="@android:color/white"
+                    android:textSize="12sp"
+                    android:layout_alignBottom="@+id/iconLista2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="14dp" />
+
+                <TextView
+                    android:id="@+id/textView2345"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tituloLista"
+                    android:layout_toEndOf="@+id/iconLista"
+                    android:layout_toRightOf="@+id/iconLista"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textView234"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iconLista"
+                    android:layout_marginBottom="11dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginRight="26dp"
+                    android:layout_toLeftOf="@+id/tituloLista"
+                    android:layout_toStartOf="@+id/tituloLista"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/turis3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorItem">
+
+                <ImageView
+                    android:id="@+id/iconLista3"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tipoturis3" />
+
+                <TextView
+                    android:id="@+id/tituloLista3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/btTurismo3"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignStart="@+id/btTurismo3"
+                    android:layout_marginBottom="27dp"
+                    android:fontFamily="monospace"
+                    android:text="TURISMO 3"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <Button
+                    android:id="@+id/btTurismo3"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_blue_dark"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:drawableRight="@android:drawable/ic_menu_info_details"
+                    android:text="MAS INFO"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textColorLink="@android:color/white"
+                    android:textSize="12sp"
+                    android:layout_alignBottom="@+id/iconLista3"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:id="@+id/textView2333243"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tituloLista"
+                    android:layout_toEndOf="@+id/iconLista"
+                    android:layout_toRightOf="@+id/iconLista"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textView3frdfdfdff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="26dp"
+                    android:text="TextView"
+                    android:visibility="invisible"
+                    android:layout_alignBottom="@+id/tituloLista3"
+                    android:layout_toEndOf="@+id/iconLista3" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/turis4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorItem1">
+
+                <ImageView
+                    android:id="@+id/iconLista4"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tipoturis4" />
+
+                <TextView
+                    android:id="@+id/tituloLista4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="TURISMO 4"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    android:layout_below="@+id/textView2dsdsdsdsds"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="51dp" />
+
+                <Button
+                    android:id="@+id/btTurismo4"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_blue_dark"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:drawableRight="@android:drawable/ic_menu_info_details"
+                    android:text="MAS INFO"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textColorLink="@android:color/white"
+                    android:textSize="12sp"
+                    android:layout_alignBottom="@+id/iconLista4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="13dp" />
+
+                <TextView
+                    android:id="@+id/textViewddsddsdsdsdsdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tituloLista"
+                    android:layout_toEndOf="@+id/iconLista"
+                    android:layout_toRightOf="@+id/iconLista"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textView2dsdsdsdsds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iconLista"
+                    android:layout_marginBottom="11dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginRight="26dp"
+                    android:layout_toLeftOf="@+id/tituloLista"
+                    android:layout_toStartOf="@+id/tituloLista"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/turis5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorItem">
+
+                <ImageView
+                    android:id="@+id/iconLista5"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tipoturis5" />
+
+                <TextView
+                    android:id="@+id/tituloLista5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="21dp"
+                    android:fontFamily="monospace"
+                    android:text="TURISMO 5"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    android:layout_above="@+id/btTurismo5"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="49dp" />
+
+                <Button
+                    android:id="@+id/btTurismo5"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_blue_dark"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:drawableRight="@android:drawable/ic_menu_info_details"
+                    android:text="MAS INFO"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textColorLink="@android:color/white"
+                    android:textSize="12sp"
+                    android:layout_alignBottom="@+id/iconLista5"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="11dp" />
+
+                <TextView
+                    android:id="@+id/textView6fgfggggfgggd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tituloLista"
+                    android:layout_toEndOf="@+id/iconLista"
+                    android:layout_toRightOf="@+id/iconLista"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textView3fggfrgfgf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tituloLista3"
+                    android:layout_marginRight="26dp"
+                    android:layout_toEndOf="@+id/iconLista3"
+                    android:text="TextView"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

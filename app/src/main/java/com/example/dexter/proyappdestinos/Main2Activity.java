@@ -41,7 +41,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.cabeceraTb);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -62,7 +62,11 @@ public class Main2Activity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        String id =getIntent().getExtras().get("idItem").toString();
+        listaItems.getDatosItem(id).getTitulo();
+        Toolbar cabeceraTb=(Toolbar)findViewById(R.id.cabeceraTb);
 
+        this.setTitle(listaItems.getDatosItem(id).getTitulo());
     }
 
 
@@ -113,15 +117,7 @@ public class Main2Activity extends AppCompatActivity {
             return fragment;
         }
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main2, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
-        }
-    }
+}
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -137,7 +133,18 @@ public class Main2Activity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            //return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                   HotelesFragment hotelesFragment = new HotelesFragment();
+                    return hotelesFragment;
+                case 1:
+                   Agencias agencias = new Agencias(); return agencias;
+                case 2:
+                    Restaurantes restaurantes = new Restaurantes(); return restaurantes;
+            }
+            return null;
+
         }
 
         @Override
@@ -150,11 +157,11 @@ public class Main2Activity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Hoteles";
                 case 1:
-                    return "SECTION 2";
+                    return "Agencias";
                 case 2:
-                    return "SECTION 3";
+                    return "Restaurantes";
             }
             return null;
         }

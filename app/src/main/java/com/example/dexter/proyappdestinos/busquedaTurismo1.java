@@ -1,7 +1,8 @@
 package com.example.dexter.proyappdestinos;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,34 +14,37 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-
-public class MainActivity extends AppCompatActivity {
+public class busquedaTurismo1 extends AppCompatActivity {
 
     ListaAdapter adapter;
 
-    ListView lista;
+    ListView lista1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lista = (ListView) findViewById(R.id.ContentListview);
+        lista1 = (ListView) findViewById(R.id.ContentListview);
 
         adapter = new ListaAdapter(this, getDatos());
-        lista.setAdapter(adapter);
+        lista1.setAdapter(adapter);
 
 
-
-
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lista1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), "click sobre " + i, Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // La posición donde se hace clic en el elemento de lista se obtiene de la
+                // la posición de parámetro de la vista de lista de Android
+                listaItems.DatosItem item= (listaItems.DatosItem) parent.getItemAtPosition(position);
+                Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
+                intent.putExtra("idItem",item.getId());
+                startActivity(intent);
+
             }
         });
 
-        lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lista1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView adapterView, View view, int i, long l) {
                 Toast.makeText(getApplicationContext(), "click Largo " + i, Toast.LENGTH_SHORT).show();
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         return listaItems.ArregloLista();
     }
 
-    @Override
+@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
@@ -79,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
+
 }
 
 

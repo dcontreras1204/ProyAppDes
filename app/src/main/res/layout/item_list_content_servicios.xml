@@ -4,7 +4,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
@@ -16,10 +15,10 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="150dp"
-        android:background="@color/colorItem2">
+        android:background="@color/colorItem1">
 
         <ImageView
-            android:id="@+id/iconLista"
+            android:id="@+id/ImgServicios"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_alignParentLeft="true"
@@ -32,7 +31,7 @@
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/tituloLista"
+            android:id="@+id/TituloServicios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -55,25 +54,17 @@
             android:text="TextView"
             android:visibility="invisible" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_info_details"
-            android:layout_alignBottom="@+id/textView4"
-            android:layout_toEndOf="@+id/textView4"
-            android:layout_marginStart="24dp" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="23dp"
             android:text="Mas Información"
             android:textSize="12sp"
-            android:layout_marginStart="47dp"
-            android:layout_alignBottom="@+id/iconLista"
-            android:layout_toEndOf="@+id/iconLista"
-            android:layout_marginBottom="26dp" />
+            android:layout_alignBottom="@+id/ImgServicios"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="51dp" />
 
     </RelativeLayout>
 
