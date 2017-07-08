@@ -133,18 +133,7 @@ public class Main2Activity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            //return PlaceholderFragment.newInstance(position + 1);
-            switch (position) {
-                case 0:
-                   HotelesFragment hotelesFragment = new HotelesFragment();
-                    return hotelesFragment;
-                case 1:
-                   Agencias agencias = new Agencias(); return agencias;
-                case 2:
-                    Restaurantes restaurantes = new Restaurantes(); return restaurantes;
-            }
-            return null;
-
+            return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
